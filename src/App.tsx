@@ -94,7 +94,7 @@ function Home() {
         <p>Loading...</p>
       )}
 
-    <footer><small>&copy; Desenvolvido por Jéssica Sobreira, 2023.</small></footer>
+    <footer><small>&copy; Jéssica Sobreira, 2023.</small></footer>
     </>
   );
 
