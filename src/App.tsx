@@ -33,17 +33,15 @@ function Home() {
   }, []);
 
   const filteredPlanets = useMemo(() => {
-    let filteredList = planets;
-
-    if (search !== '') {
-      const searchLower = search.toLowerCase();
-      filteredList = planets.filter(
-        (planet) => planet.englishName.toLowerCase().includes(searchLower)
-      );
-    }
-
-    return filteredList;
+    const searchLower = search.toLowerCase();
+    return planets.filter(
+      (planet) => planet.englishName.toLowerCase().includes(searchLower)
+    );
   }, [search, planets]);
+
+  useEffect(() => {
+    setCurrentPage(1); 
+  }, [search]);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -94,10 +92,9 @@ function Home() {
         <p>Loading...</p>
       )}
 
-    <footer><small>&copy; Jéssica Sobreira, 2023.</small></footer>
+    <footer><small>&copy; Desenvolvido por Jéssica Sobreira, 2023.</small></footer>
     </>
   );
-
 }
 
 export default Home;
